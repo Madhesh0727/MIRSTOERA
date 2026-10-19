@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-navy: #16283D;
+    --color-gold: #C8A45D;
+    --color-ivory: #F7F1E5;
+    --color-burgundy: #692D40;
+    --color-ink: #292623;
+  }
+
+  html,
+  body {
+    overflow-x: hidden;
+    max-width: 100vw;
+    background-color: #0e0d0c;
+    background-image: 
+      radial-gradient(rgba(200, 164, 93, 0.12) 1px, transparent 1px),
+      radial-gradient(rgba(200, 164, 93, 0.06) 1px, #0e0d0c 1px);
+    background-size: 32px 32px;
+    background-position: 0 0, 16px 16px;
+    color: #F7F1E5;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cinzel', 'Playfair Display', Georgia, serif;
+    color: #F7F1E5;
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer utilities {
+  .paper-surface {
+    background: linear-gradient(180deg, rgba(42, 36, 30, 0.95) 0%, rgba(22, 19, 16, 0.98) 100%);
+    border: 1px solid rgba(200, 164, 93, 0.45);
+    box-shadow: 0 4px 25px -2px rgba(0, 0, 0, 0.6);
+    color: #F7F1E5;
+  }
+
+  .royal-double-border {
+    position: relative;
+    border: 1px solid #C8A45D;
+  }
+
+  .royal-double-border::after {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    border: 1px solid rgba(200, 164, 93, 0.4);
+    pointer-events: none;
+    border-radius: inherit;
+  }
+
+  .gold-gradient-text {
+    background: linear-gradient(135deg, #C8A45D 0%, #E8D49E 50%, #9B7833 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .gold-shimmer {
+    background: linear-gradient(90deg, transparent 0%, rgba(200, 164, 93, 0.15) 50%, transparent 100%);
+    background-size: 200% 100%;
+    animation: shimmer 3s infinite;
+  }
+
+  /* Temple Run Ancient Game Theme Enhancements */
+  .temple-stone-monolith {
+    background: radial-gradient(circle at 50% 20%, #2c2621 0%, #1a1714 65%, #0e0d0c 100%);
+    border: 2px solid #C8A45D;
+    box-shadow: 0 0 40px rgba(200, 164, 93, 0.3), inset 0 0 50px rgba(0, 0, 0, 0.9);
+  }
+
+  .temple-stone-card {
+    background: linear-gradient(180deg, rgba(42, 36, 30, 0.95) 0%, rgba(22, 19, 16, 0.98) 100%);
+    border: 1px solid rgba(200, 164, 93, 0.45);
+  }
+
+  .temple-glow-gold {
+    box-shadow: 0 0 30px rgba(245, 158, 11, 0.5), inset 0 0 15px rgba(245, 158, 11, 0.2);
+  }
+
+  .temple-flame-anim {
+    animation: flameFlicker 2s infinite ease-in-out;
+  }
+}
+
+@keyframes flameFlicker {
+  0%, 100% {
+    transform: scale(1) translateY(0);
+    filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.8));
+  }
+  50% {
+    transform: scale(1.1) translateY(-2px);
+    filter: drop-shadow(0 0 20px rgba(239, 68, 68, 0.95));
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+

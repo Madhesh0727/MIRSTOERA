@@ -1,0 +1,7 @@
+# MIRSTOERA Robots Configuration
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /api/
+
+Sitemap: https://mirstoera.in/sitemap.xml
